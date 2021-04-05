@@ -1,0 +1,6 @@
+Universal Approximation Theorem UAT
+
+
+neural network의 경우에는 linear layer와 non-linear activation function을 여러겹 쌓아서 어떠한 함수도 근사할 수 있음.
+
+최적화의 이슈는 있지만...
