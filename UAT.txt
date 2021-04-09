@@ -4,3 +4,29 @@ Universal Approximation Theorem UAT
 neural network의 경우에는 linear layer와 non-linear activation function을 여러겹 쌓아서 어떠한 함수도 근사할 수 있음.
 
 최적화의 이슈는 있지만...
+
+
+
+
+
+
+++ Traning / Validation
+
+epoch마다 Valid
+
+당연히 epoch을 반복할수록 Traning Loss는 작아지겠지만 이는 Overfitting으로 이어질 수 있음
+각 epoch이 끝날 때 마다, Update된 Parameter로 Validation Loss를 점검해봄
+epoch이 끝났을 때, "Validation loss"가 가장 작은 모델을 선택....
+
+Traning 만 학습하고, Validation은 검증만 함
+
+
+• Validation#error를 최소화 하기 위해 hyper-parameter를 조절
+• Validation'set에 overfitting'될 가능성
+• 또한, validation'loss를 보고 모델을 선택하는 것도 마찬가지.
+
+따라서 
+
+• Test Set을 따로 두어, 최종적으로 모델의 성능을 평가
+• 보통은 6:2:2의 비율로 train#/#validation#/#test#set을 임의 분할
+• 가끔은 Test'set이 고정되어 주어지기도 함
