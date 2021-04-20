@@ -1,5 +1,7 @@
 import torch
 
+# 여기서 데이터 불러오도록 하면 되겠네
+
 
 def load_mnist(is_train=True, flatten=True):
     from torchvision import datasets, transforms
@@ -18,6 +20,8 @@ def load_mnist(is_train=True, flatten=True):
         x = x.view(x.size(0), -1)
 
     return x, y
+
+# train data, vaild data 나누기
 
 
 def split_data(x, y, train_ratio=.8):
@@ -40,6 +44,7 @@ def split_data(x, y, train_ratio=.8):
     return x, y
 
 
+# 입력차원에서 출력차원까지 일정한 비율(등차수열)로 줄어들도록 소프트 코딩
 def get_hidden_sizes(input_size, output_size, n_layers):
     step_size = int((input_size - output_size) / n_layers)
 
